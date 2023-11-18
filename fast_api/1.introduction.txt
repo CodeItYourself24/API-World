@@ -1,0 +1,99 @@
+*************************** FAST API *******************************
+
+    FastAPI is a modern, high-performance web framework for building APIs with Python. 
+    
+    It is designed to be fast, easy to use, and highly efficient, leveraging Python type hints for declarative validation and serialization of data.
+
+<<<<<<<< one of the best features of fastapi >>>>>>>>>>>>>>>>>>>>>>
+
+inbuilt documentation
+    - it can be accessed by applying "/docs" at the end of the localhost URL  (127.0.0.1.8000/docs)
+    - shows all the api that we have created
+    - we can test the api's directly from here (no need to have postman or any external service to test)
+
+Fast: 
+    Utilizes Python's asynchronous capabilities (async/await) and Starlette framework to handle requests concurrently, enabling high performance and scalability.
+
+Automatic Documentation: 
+    Generates interactive API documentation based on OpenAPI and ReDoc, allowing developers to understand and test APIs easily. The documentation is automatically generated from Python types, making it consistent and always up-to-date.
+
+Declarative Syntax: 
+    Uses Python type hints for data validation, serialization, and automatic generation of JSON schemas, reducing the amount of boilerplate code needed for these tasks.
+
+Data Validation and Serialization: 
+    Leverages Pydantic, a data validation and settings management library, to define data models using Python type annotations, ensuring data integrity and consistency.
+
+Dependency Injection: 
+    Provides a built-in dependency injection system that simplifies the management and injection of dependencies into endpoints, making the code modular and easier to maintain.
+
+Security Features: 
+    Offers built-in security features for handling authentication, authorization, and data validation, providing tools to create secure APIs.
+
+Compatibility: 
+    Works with Python 3.7 or later and supports both asynchronous and traditional synchronous code. It integrates well with other Python frameworks and libraries.
+
+WebSocket Support: 
+    Offers WebSocket support, enabling bidirectional communication between clients and the server.
+
+Extensibility: 
+    Allows for easy integration with external components, libraries, and middleware, facilitating the extension of functionality as needed.
+
+Performance Monitoring and Debugging: 
+    Provides features to monitor and debug applications, helping developers optimize and troubleshoot issues effectively.
+
+Simple and Intuitive Interface: 
+    Aims to provide a user-friendly interface and intuitive API design to increase developer productivity and reduce the learning curve.
+
+Active Community and Support: 
+    Benefits from an active and growing community, contributing libraries, extensions, and documentation to support developers.
+
+************************************************************************
+
+Getting started >>
+
+1.install fast api through terminal >> python -m pip install fastapi
+
+2.Uvicorn is used to run webserver >> pip install uvicorn
+	(unlike django fastapi needs a webserver that needs to be installed)
+
+3.fastapi needs to be imported in the python file you are working on
+	from fastapi import FastAPI
+
+4.create object instance of fast api as below
+	app = FastAPI()
+
+5.create an api using @app. and use any of the below methods to GET, POST, PUT, DELETE and then the endpoint
+	(ENDPOINT >> one end of a communication channel)
+
+		ex: @app.get("/")
+		    def home():
+			return {"intro":"Welcome to the mainpage"}
+
+6.basic command syntax to run the server using uvicorn
+	"uvicorn filename:app --reload"
+
+
+			<<<<<<<<<<<<<<<<< Key differences between Flask and FastAPI >>>>>>>>>>
+
+
+		FLASK														FASTAPI
+-	is a micro-framework,  								|	is a full-stack framework.
+-	used for building web applications and APIs.		|	FastAPI is designed for building APIs
+														|	It is faster than Flask due to its asynchronous code and type annotations.
+-	Flask requires manual validation and documentation.	|	FastAPI has automatic data validation and documentation
+-	Flask has a larger community and ecosystem 			| 	less community & ecosystem compared to Flask
+
+
+FAST API >> 
+			lacks an integrated ORM, it is compatible with Pydantic ORM mode in SQLAlchemy. Numerous NoSQL databases are supported by the Fast API, including MongoDB, ElasticSearch, Cassandra, CouchDB, and ArangoDB
+FLASK >> 
+		There is no built-in ORM framework in Flask. Many open source libraries or extensions are available for developers, including Flask-SQLAlchemy, Flask-Pony, etc. The use of open source libraries or extensions supports NoSQL databases, and Flask-PyMong is an excellent option for integrating MongoDB with Flask.
+
+
+FAST API >>
+			FastAPI includes an admin dashboard. It makes use of Swagger as the web user interface for API documentation.
+FLASK >>
+		There isn't a built-in admin panel in Flask, but you can use the Flask-Admin extension instead. It supports a variety of backends, including Peewee, MongoEngine, and SQLAlchemy.
+
+
+REF: https://www.projectpro.io/article/fastapi-vs-flask/652

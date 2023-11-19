@@ -1,0 +1,70 @@
+
+<<<<<<<<<<<<<<<<<<<<<<<<<< interview questions part-1 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+>> What are the benefits of using Django REST Framework?
+
+	- Simplified API development with built-in serializers, authentication, and authorization mechanisms.
+	- Support for various data formats such as JSON, XML, and YAML.
+	- Comprehensive documentation generation.
+	- Powerful generic views and viewsets for handling common API operations.
+	- Support for authentication schemes like token-based authentication and OAuth.
+
+
+>> Serialization in Django REST Framework?
+
+	- A serializer converts complex data types (like Django models) into JSON, XML, or other content types. It also handles deserialization, validating input data, and transforming data for display.
+
+	- After validating the incoming data, serializers also enable deserialization, which allows parsed data to be transformed back into complex types.
+
+>> What is validation in Django REST Framework?
+
+	- It is a process of ensuring that the data sent to the API is accurate, consistent, and meets the required criteria before it's saved or processed.
+
+>> What’s the difference between a View, Viewset  & ModelViewSet 
+
+	VIEW >> is a single function that performs a specific action on a model.
+
+	VIEWSET >> combines the logic for different kinds of views into a single class.
+				(is a class that provides a set of actions that can be performed on a model.)
+
+				benefits >> reducing redundancy and enhancing code reusability.
+
+		- they handle multiple HTTP methods(get,put,post,delete) through action routing which maps HTTP methods to actions performed on data.
+	
+
+	MODEL VIEWSET >> is a special type of ViewSet that is automatically generated from a model.
+
+		- This means that it will already have all of the CRUD operations (create, read, update, delete) set up and ready to go.
+
+	Note: A regular ViewSet will not have these operations automatically generated, and you will need to set them up yourself.
+
+
+>> What are Routers in DRF?
+
+	Routers helps you to automatically generate URLs for a given resource/viewsets. 
+
+	This can be helpful if you have a large number of resources/viewsets and don’t want to have to manually create URLs for each one.
+
+	DRF provides two types of routers:
+
+		a. Simple Router: 	it is a basic router provided by DRF.
+
+				- It automatically generates standard CRUD (Create, Retrieve, Update, Delete) URL patterns for your viewsets.
+
+			should be imported as >>
+						from rest_framework import routers
+						
+						router = routers.SimpleRouter()
+						router.register(r'items', ItemViewSet)
+
+		b. DefaultRouter:	 is an enhanced version of SimpleRouter. 
+
+				- It includes the standard CRUD URL patterns provided by SimpleRouter &
+					also adds a default route for listing all available viewsets
+
+			imported as >>
+					from rest_framework import routers
+
+					router = routers.DefaultRouter()
+					router.register(r'items', ItemViewSet)

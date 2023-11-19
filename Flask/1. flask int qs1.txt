@@ -1,0 +1,69 @@
+-> flask >> a microweb framework
+
+	it is based on the WSGI (web server gateway interface) toolkit and Jinja 2 template engine.
+
+WSGI >> describes how a web server communicates with a web application.
+
+-> features >>
+
+	- built in webserver and debugger (visual debug)
+	- the built-in development server, supports HTTP and WebSocket protocols, and can be easily extended with third-party extensions.
+	- it includes features such as request handling, routing, templating, and security.
+	- compatibility with most of the techlgs
+	- integrated support for unit testing
+	- securing cookies in client side sessions
+	- dispatching restful requests
+	- google app engine compatibility
+	- unicode support
+ 
+	
+
+-> default host and port of Flask?
+
+	def local host 127.0.0.1 and port 5000
+
+-> How do you create a Flask application?
+
+	- import the Flask module and create an instance of the Flask class. 
+	- You can then define routes, templates, and other application components.
+
+-> What is the Flask request object?
+
+	- it is a global object that contains information about the current HTTP request, such as the URL, method, headers, and form data.
+
+-> routing in Flask?
+
+	mapping the URLs to a specific function that will handle the logic for that URL. 
+
+-> flask error handlers >>
+
+	when error occurs	>> HTTP status code is returned
+
+	When an error occurs with an HTTP status code, we can show custom error pages to the user with the help of error handlers. 
+
+		- It can return responses when a certain type of error is occurred
+		(which is similar to a function view that returns a response when the request URL is similar)
+		- It passes the object to handle the error, in most cases, it is an HTTPException.
+
+	status code btw 400-499	>> error is on the client side data request
+	status code btw 500-599	>> error is on server side application
+
+-> template inheritance in flask?
+
+	We use template inheritance, which allows us to generate the part that is common to all webpages (e.g. footer, navigation bar) only once and eliminates the need to write the HTML, head, and title tag many times.
+
+
+-> How do you handle forms in Flask?
+
+	Forms can be handled by using Flask-WTF extension, which provides a set of functions and classes to make form handling easier. 
+	- It includes features such as form validation, CSRF protection, and field rendering.
+
+-> What is a Flask extension?
+
+	It is a third-party package that adds functionality to a Flask application. 
+	- Extensions can provide features such as database integration, authentication, caching, and more.
+
+-> What is Flask-RESTful?
+
+	- it is a Flask extension that provides support for building RESTful APIs. 
+	- It includes features such as request parsing, resource routing, and output formatting.

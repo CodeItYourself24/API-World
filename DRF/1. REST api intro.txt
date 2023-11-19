@@ -1,0 +1,72 @@
+<<<<<<<<<<<<<< API >>>>>>>>>>>>>>>>>>>.
+
+API >>
+        Application -> day to day apps that you use
+            Programming -> set of intructions that are used to perform a specific task
+                Interface -> point where two apps/programs meet to interact with each other
+
+    - helps in connecting various software components.
+
+REST >>
+
+    REpresentational State transfer.
+
+    - it is a stateless client server model (beneficial due to stateless nature).
+    - used for web based architecture for data communication
+    - uses HTTP to make calls btw machines
+
+	The request sent by the client consists of all the data needed by a server to fulfill the request.
+
+FEATURES >>
+        - proper documentation and error messages
+
+
+PRINCIPLES OF REST API >>
+
+    - stateless, light weight, communication support
+    - client server decoupling
+    - uniform interface
+    - cacheable
+    - layered system
+    - code on demand
+
+
+METHODS OF REST API >>
+
+    - create, read, update and delete (called CRUD operations)
+    - which are POST, GET, UPDATE, DELETE (HTTP methods)
+
+What is a REST API?
+
+    - it is an interface that allows applications to interact and share data. 
+    - In a REST API, all data is treated as resources, each one represented by a unique uniform resource identifier (URI).
+
+
+What do you mean by RESTful web services?
+
+    REST API is also known as RESTful web services that follow the REST architecture.
+
+
+What are cache-control headers?
+
+    - Cache-control headers are used to control caching and to attain caching ability. The most commonly used cache-control headers are public, private, and No-Store.
+
+
+What is the definition of messaging in terms of RESTful web services?
+
+    - In REST API web services, when a REST client wants to send a message to the server, it can be sent in an HTTP request form, and the same applies to the server. This kind of communication is called messaging in REST.
+
+            client -----message(HTTP request form)-------> server
+
+
+Explain ‘Addressing’ in RESTful web services.
+
+    - process of locating various types of resources with the help of a URL on the REST server is known as ‘addressing’ 
+    - Usually, single or multiple resources are addressed by resources.
+
+
+
+
+
+
+

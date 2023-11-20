@@ -1,0 +1,123 @@
+
+<<<<<<<<<<<<<<<<<< DJANGO INTERVIEW QUESTIONS >>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+1. Django >>
+
+	Django is a Full-stack web development framework
+
+
+2. Companies that use django >>
+
+	Instagram, Mozilla, Bitbucket, Nextdoor, and Clubhouse.
+
+
+3. Difference between project and APP?
+
+	project is the entire application 
+	app is part of the project which can peform any task
+
+4. features of django >>
+
+	- admin interface
+	- middleware class support
+	- web templating system
+	- model relation database
+	- provides ORM
+
+5. djangos project directory structure?
+
+	a) init.py (package indicator): it serves as an indicator to Python that the directory it resides-in should be treated as a Python package.
+
+		(The presence of an __init__.py file in a directory tells Python that this directory should be considered a package)
+
+		Namespace Management: It allows you to organize your code into modules and sub-packages, which helps with better structure & manage your Django project. 
+			- Django uses this package structure to organize various parts of your project, including apps, middleware, and template tags.
+
+		Import Statements: It allows you to import modules and objects from files within the package more easily.
+
+	b) manage.py: This file is used to interact with your project from the command line utility. with the help of this command, we can manage several commands.
+
+	c) settings.py – includes configurations for database connections, installed apps, middleware, templates, authentication, and more.
+
+	d) views.py – Views in Django are responsible for processing HTTP requests and returning HTTP responses. 
+			
+		- they serve as the bridge between the URL routing configuration and the data model, handling the logic and behavior for a specific web page or API endpoint.
+
+	e) urls.py – This file is responsible for routing HTTP requests to the appropriate views.
+
+	- It is a universal resource locator which contains all the endpoints, we store all links of the project and functions to call it.
+
+	f) models.py – It allows us to build tables, fields, constraints and organize tables into models. Generally, each model maps to a single database table.
+
+	g) wsgi.py – WSGI stands for Web Server Gateway Interface, This file is used for deploying the project in WSGI. It helps communication between your Django application and the web server.
+
+	h) admin.py – It is used to create a superuser Registering model, login, and use the web application.
+
+	i) app.py – It is a file that helps the user to include the application configuration for their app.
+
+
+6.  Django admin interface >>
+		
+	Django provides us with a default/in-built admin interface that is very helpful for creating, reading, updating, and deleting model objects that allow the user to do administrative tasks.
+
+
+What all does settings.py file contain?
+
+	a) DEBUG >>  A boolean that determines whether your application is in debugging mode. It should be set to True during development but set to False in production to enhance security.
+
+	b) SECRET_KEY: A secret key used for cryptographic signing in Django. It should be kept secret and not shared publicly.
+
+	c) ALLOWED_HOSTS: A list of valid hostnames that can serve the application. It's a security measure to prevent unauthorized access.
+
+	d) INSTALLED_APPS: A list of installed Django apps. These apps can include the built-in apps and any custom apps you create.
+
+	e) DATABASES: Configuration for the database connection, including the database engine, name, user, password, host, and port.
+
+	f) STATIC_URL and STATIC_ROOT: Settings for serving static files (CSS, JavaScript, images) during development and in production.
+
+	g) MEDIA_URL and MEDIA_ROOT: Settings for handling media files (user-uploaded content)
+
+	h) TEMPLATES: Configuration for template rendering engines and options.
+
+	i) MIDDLEWARE: A list of middleware classes that process requests and responses globally.
+
+	j) AUTHENTICATION_BACKENDS: List of authentication backends to use for user authentication.
+
+	k) AUTH_USER_MODEL: The custom user model used for authentication.
+	l) LOGIN_URL and LOGIN_REDIRECT_URL
+	m) TIME_ZONE and USE_TZ: Time zone settings for the application.
+
+
+
+What are static files?
+
+	Static files are used to save files such as CSS, JavaScript, images and other types of static files.
+
+	- Django provides django.contrib.staticfiles which helps us to manage static files
+
+
+What are templates in the Django language?
+
+	template is a folder that consists of HTML files/templates.
+
+	- Django framework efficiently manages and generates dynamically generated HTML web pages for end-user viewing
+
+What are sessions?
+
+	Sessions is a technique to keep track of site's and a browers state.
+
+	- during a session, the user's data is stored in sessions which are server side files.
+
+	- one advantage of using a session is that the data is stored in an encrypted format.
+
+
+<<<< Signals >>>>
+
+		It is a mechanism for allowing various parts of your application to communicate and react to specific events or actions that occur within the framework. 
+
+		- These events could be things like when a model is saved, deleted, or when a request is received.
+
+		- Django signals work on the observer pattern, 
+				where senders signal specific events, and 
+				receivers respond to those events. 
+		When a sender triggers a signal, one or more receiver functions can be connected to that signal and perform actions in response.

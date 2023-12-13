@@ -27,6 +27,12 @@ WSGI >> describes how a web server communicates with a web application.
 	- import the Flask module and create an instance of the Flask class. 
 	- You can then define routes, templates, and other application components.
 
+
+-> __name__ in flask?
+
+	- it represents the name of the the current module.
+	- The app needs to know where it’s located to set up some paths, and __name__ is a convenient way to tell that.
+
 -> What is the Flask request object?
 
 	- it is a global object that contains information about the current HTTP request, such as the URL, method, headers, and form data.

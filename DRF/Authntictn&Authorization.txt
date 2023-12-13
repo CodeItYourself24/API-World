@@ -1,0 +1,13 @@
+
+<<<<<<<<<<<< TYPES OF AUTHENTICATIONS IN drf >>>>>>>>>>>>>>>>>>>>>
+
+    - Basic authentication
+    - token authentication
+    - session authentication
+    - remote user authentication
+
+Basic authentication >>
+
+        - users HTTP basic authentication
+        - Generally good for testing
+        

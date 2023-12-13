@@ -7,6 +7,13 @@ API >>
 
     - helps in connecting various software components.
 
+API terminologies >> (essential in making an api)
+
+    - HTTP (get, put, post, delete)
+    - URL
+    - JSON
+    - REST
+
 REST >>
 
     REpresentational State transfer.
@@ -29,7 +36,6 @@ PRINCIPLES OF REST API >>
     - cacheable
     - layered system
     - code on demand
-
 
 METHODS OF REST API >>
 

@@ -10,7 +10,7 @@
 
 # 2.setup flask app
 
-from flask import Flask
+from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)          # creating instance of flask and initializes web app

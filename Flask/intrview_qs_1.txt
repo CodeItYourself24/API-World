@@ -1,0 +1,106 @@
+-> flask >> a microweb framework
+
+	it is based on the WSGI (web server gateway interface) toolkit and Jinja 2 template engine.
+	- micro > keeps the core features simple but extensible.
+
+WSGI >> describes how a web server communicates with a web application.
+
+-> features >>
+
+	- built in webserver and debugger (visual debug)
+	- the built-in development server, supports HTTP and WebSocket protocols, and can be easily extended with third-party extensions.
+	- it includes features such as request handling, routing, templating, and security.
+	- compatibility with most of the techlgs
+	- integrated support for unit testing
+	- securing cookies in client side sessions
+	- dispatching restful requests
+	- google app engine compatibility
+	- unicode support
+ 
+-> Advantages >>	
+
+	- flask is light weight.
+	- it is ORM agnostic (users can plug into fav ORM like sqlalchemy)
+	- easy to deploy in prod (comes with WSGI)
+	- handles HTTP requests easily.
+
+-> default host and port of Flask?
+
+	def local host 127.0.0.1 and port 5000
+
+-> How do you create a Flask application?
+
+	- import the Flask module and create an instance of the Flask class. 
+	- You can then define routes, templates, and other application components.
+
+
+-> __name__ in flask?
+
+	- it represents the name of the the current module.
+	- The app needs to know where it’s located to set up some paths, and __name__ is a convenient way to tell that.
+
+-> What is the Flask request object?
+
+	- it is a global object that contains information about the current HTTP request, such as the URL, method, headers, and form data.
+
+-> routing and rendering in Flask >>
+
+	Routing > mapping the URLs to a specific function that will handle the logic for that URL. 
+	Rendering > it can be used by importing 
+		"from flask import Flask, render_template"
+		
+	- name of the template and the variables you want to pass to the template engine as keyword arguments.
+	eg: return render_template('index.html')
+
+
+-> jinja2 and template inheritance in flask >>
+
+	Jinja2 > it is a templating engine which is used to render html templates.
+
+	Template inheritance > which allows us to generate the part that is common to all webpages (e.g. footer, navigation bar) only once and eliminates the need to write the HTML, head, and title tag many times.
+
+	- allows you to create a template block which can be used in other templates.
+	ex: assuming we want to use the "index.html" code once again
+
+	- can be extended in the other templates as below
+		{% extends 'index.html' %}
+		{% block body %}
+		<p> this is a homepage </p>
+		{% end block %}
+
+-> What is a Flask extension?
+
+	It is a third-party package that adds functionality to a Flask application. 
+	- Extensions can provide features such as database integration, authentication, caching, and more.
+
+
+-> How do you handle forms in Flask >>
+
+	Forms can be handled by using Flask-WTF extension, which provides a set of functions and classes to make form handling easier. 
+	- It includes features such as CSRF protection, form validation, form rendering, and file uploads.
+
+			"pip install Flask-WTF"
+	- imported as 
+			"from flask_wtf import FlaskForm"
+	
+	WTF form fields >
+			"from wtforms import StringField,....."
+
+		- StringField			- PasswordField			- TextAreaField
+		- IntegerField			- BooleanField			- SelectField
+		- SubmitField			- DecimalField			- RadioField
+
+	WTform validators > 
+			"from wtforms import Form,validators"
+			"from wtforms.validators import Length"
+
+	- some of the predefined validators are ......
+		- InputRequired			- DataRequired			- EqualTo
+		- Email					- Regexp
+
+
+
+-> What is Flask-RESTful?
+
+	- it is a Flask extension that provides support for building RESTful APIs. 
+	- It includes features such as request parsing, resource routing, and output formatting.

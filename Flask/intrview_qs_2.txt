@@ -1,0 +1,39 @@
+
+-> url_for() >>
+
+    - used to generate a URL to a specific function dynamically.
+        "{{ url_for('function_name')}}"
+
+-> 
+
+
+-> flask session >>
+        a flask extension  that adds server side session functionality to the app.
+    
+    - session is a period of time the client logsin and logsout from an app.
+    - the data present in the session is saved on a temporary directory.
+
+-> flask error handlers >>
+
+	when error occurs	>> HTTP status code is returned
+
+	When an error occurs with an HTTP status code, we can show custom error pages to the user with the help of error handlers. 
+
+		- It can return responses when a certain type of error is occurred
+		(which is similar to a function view that returns a response when the request URL is similar)
+		- It passes the object to handle the error, in most cases, it is an HTTPException.
+
+	status code btw 400-499	>> error is on the client side data request
+	status code btw 500-599	>> error is on server side application
+
+-> Flask context >>
+
+        It is a container obj that holds information about..
+            - current application context,
+            - request context and
+            other important data related to flask app.
+
+    diff btw flask app context and request context >
+
+        App context is the gloabl context which represents current flask app.
+        - it is created when the app starts  and shared accross all the requests.

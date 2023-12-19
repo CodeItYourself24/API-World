@@ -111,7 +111,25 @@ What are sessions?
 	- one advantage of using a session is that the data is stored in an encrypted format.
 
 
-<<<< Signals >>>>
+what is django ORM?
+
+		ORM  (Object Relational Mapper) enables us to interact with our database. 
+
+	- It allows us to manipulate and query objects. 
+	- Django uses a database abstraction API called ORM to interface Viewed with its database models, to use Django object relation Models
+	- ORM may be accessed by running the following command in our project directory.
+
+				python manage.py shell
+	- It opens a Python console where we may add objects, retrieve objects, modify existing items, and delete objects. 
+'
+
+what is superuser?
+
+	A user with permission to CRUD on the admin page which includes model records and other user.
+
+
+
+What are signals?
 
 		It is a mechanism for allowing various parts of your application to communicate and react to specific events or actions that occur within the framework. 
 
@@ -121,3 +139,27 @@ What are sessions?
 				where senders signal specific events, and 
 				receivers respond to those events. 
 		When a sender triggers a signal, one or more receiver functions can be connected to that signal and perform actions in response.
+
+
+Difference btw django model and django form?
+
+Model >> is used to handle the data in the backend, while the 
+Form >> is used to handle the data in the frontend.
+
+ - A Django model is a Python class that defines the fields and behavior of a database table. It is used to represent the data that will be stored in the database and provides an interface for interacting with that data.
+
+		syntax:
+				from django.db import models
+
+				class Book(models.Model):
+					title = models.CharField(max_length=200)
+
+ - A Django form, on the other hand, is a Python class that defines a form that can be displayed in a web page and used to collect user input. It is used to validate and process user input, and can be used to create, update, or delete data in the database.
+
+		syntax:
+				from django import forms
+				from .models import Book
+
+				class BookForm(forms.ModelForm):
+    				class Meta:
+

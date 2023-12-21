@@ -98,9 +98,29 @@ WSGI >> describes how a web server communicates with a web application.
 		- InputRequired			- DataRequired			- EqualTo
 		- Email					- Regexp
 
+-> debug in flask >>
+		debug mode can be set to true when we call the run method of the flask app obj.
+			"app.run(debug=True)"
+
+	- we can make use of the Flask-DebugToolbar extension for easy debugging in the browser. 
+	- We can also make use of Python’s pdb module and the debugging statement import pdb;pdb.set_trace() to support the debugging process.
 
 
--> What is Flask-RESTful?
+-> how to connect database in flask >>
 
-	- it is a Flask extension that provides support for building RESTful APIs. 
-	- It includes features such as request parsing, resource routing, and output formatting.
+	Flask works with most of the RDBMSs, such as PostgreSQL, SQLite, and MySQL. 
+	
+	However, to connect with databases, we must make use of the "Flask-SQLAlchemy extension."
+	and for working with No-SQL data stores such as MongoDB, we can make use of the "Flask-MongoEngine extension."
+
+-> Mailing feature in flask >>
+
+			"pip install Flask-Mail"
+	Once installed, then we need to use Flask Config API to configure MAIL-SERVER, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD, etc.
+
+				from flask_mail import Mail, Message
+				from flask import Flask
+			
+				app = Flask(__name__)
+				mail = Mail(app)
+

@@ -1,11 +1,12 @@
 
+-> How to handle incoming data in Flask >>
+        Incoming data can be accessed through the request object in Flask. 
+        - To access data in the request body, we can use the "request.get_json()" method, which parses the request body as JSON and returns a Python dictionary.
+
 -> url_for() >>
 
     - used to generate a URL to a specific function dynamically.
         "{{ url_for('function_name')}}"
-
--> 
-
 
 -> flask session >>
         a flask extension  that adds server side session functionality to the app.
@@ -26,6 +27,11 @@
 	status code btw 400-499	>> error is on the client side data request
 	status code btw 500-599	>> error is on server side application
 
+-> What is Flask-RESTful?
+
+	- it is a Flask extension that provides support for building RESTful APIs. 
+	- It includes features such as request parsing, resource routing, and output formatting.
+
 -> Flask context >>
 
         It is a container obj that holds information about..
@@ -37,3 +43,31 @@
 
         App context is the gloabl context which represents current flask app.
         - it is created when the app starts  and shared accross all the requests.
+
+-> What is the application context in Flask?
+
+        The application context in Flask relates to the idea of a complete request/response cycle. 
+        - It keeps a track of application-level data during a request or a CLI command.
+        - We make use of g and current_app proxies to achieve the same.
+
+    There are situations when it is difficult to directly import the Flask app, such as in the case of a Flask extension or a Blueprint. Moreover, introducing applications may raise the problem of circular imports.
+
+        - Flask pushes the application context with each request. 
+        - Therefore, during a request, functions have access to g and current_app to overcome the problem highlighted above.
+
+-> What do you mean by Thread local object in Flask?
+
+        In Flask, thread-safety has been provided out of the box. 
+            - We can use objects such as current_app, g, and request without worrying about problems related to locking and concurrency. 
+            - Moreover, we need not pass objects from methods to methods, and these objects are generally available within a valid request context.
+
+This attribute of Flask makes it a bit unique and provides a lot of convenience to the Flask developers while keeping Flask application thread-safe.
+
+
+-> How to create a RESTful application in Flask
+
+        RESTful applications can be created with the help of many extensions such as..
+            - Flask-API
+            - Flask-RESTful
+            - Flask-RESTX
+            - Connexion

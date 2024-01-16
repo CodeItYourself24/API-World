@@ -1,0 +1,67 @@
+What are Middlewares in django?
+
+		Middleware is a framework of hooks into Django’s request/response processing.
+		
+		(Middleware acts as a bridge between two parts of a program/system that enables communication between them)
+
+		- It’s a light, low-level “plugin” system for globally altering Django’s input or output.
+		- Each middleware component is responsible for doing some specific function.
+
+	>> How does Middleware work?
+
+		When a user makes a request from your application, a WSGI handler is instantiated, which handles the following things:
+
+		- Imports project’s settings.py file and Django exception classes.
+		- Loads all the middleware classes which are written in MIDDLEWARE tuple located in settings.py file
+		- Builds list of methods which handle processing of request, view, response & exception.
+		- Loops through the request methods in order.
+		- Resolves the requested URL
+		- Loops through each of the view processing methods
+		- Calls the view function
+		- Processes exception methods (if any)
+		- Loops through each of the response methods in the reverse order from request middleware.
+		- Builds a return value and makes a call to the callback function.
+
+	What are the types of Middleware?
+		1. Built-in Middleware
+		2. Custom Middleware
+
+	1. Built-in Middlewares:
+
+					MIDDLEWARE = [
+			'django.middleware.security.SecurityMiddleware',
+			'django.contrib.sessions.middleware.SessionMiddleware',
+			'django.middleware.common.CommonMiddleware',
+			'django.middleware.csrf.CsrfViewMiddleware',
+			'django.contrib.auth.middleware.AuthenticationMiddleware',
+			'django.contrib.messages.middleware.MessageMiddleware',
+			'django.middleware.clickjacking.XFrameOptionsMiddleware',
+		]
+
+	2. Custom Middlewares:
+
+			Middlewares that are created by us.
+
+		How to write a custom Middleware in Django? 
+
+		1. Create a python package (a folder with __init__.py inside) named as middleware
+		2. Create a file named custom_middleware.py (or anything which you like) and a regular Python function / class in it.
+		3. You can write middleware as a function(FUNCTION BASED MIDDLEWARE) or as a class(CLASS BASED MIDDLEWARE) whose instances are callable.
+		4. Add your middleware in middleware list present in settings.py
+
+
+    Special methods in class based middlewares:
+
+        process_request
+        process_view(request, view_func, view_args, view_kwargs)
+        process_response
+        process_template_response(request,response)
+        process_exception(request,exception)
+
+    Things to remember while using a middleware
+
+        - Order of middleware is important.
+        - it only needs to extend from class object.
+        - it is free to implement some of the methods and not implement other methods.
+        - it may implement process_request but may not implement process_response and process_view.
+

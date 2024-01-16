@@ -116,7 +116,6 @@ what is django ORM?
 		ORM  (Object Relational Mapper) enables us to interact with our database. 
 
 	- It allows us to manipulate and query objects. 
-	- Django uses a database abstraction API called ORM to interface Viewed with its database models, to use Django object relation Models
 	- ORM may be accessed by running the following command in our project directory.
 
 				python manage.py shell

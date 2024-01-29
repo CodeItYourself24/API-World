@@ -11,11 +11,23 @@
 	- Support for authentication schemes like token-based authentication and OAuth.
 
 
+
+>> difference between stateful and stateless?
+
+	STATELESS >>  There is no stored knowledge of or reference to past transactions. Each transaction is made as if from scratch for the first time.
+
+	STATEFUL >> If a transaction is interrupted, the context and history have been stored so you can more or less pick up where you left off. 
+
+	In terms of authorization,
+
+		Stateless = save authorization info on client side, along with a signature to ensure integrity, in form of tokens
+		Stateful = save authorization info on server side, this is the traditional way
+
 >> Serialization in Django REST Framework?
 
-	- A serializer converts complex data types (like Django models) into JSON, XML, or other content types. It also handles deserialization, validating input data, and transforming data for display.
+	- A serializer converts complex data types (like Django models instances, queryysets) into JSON, XML, or other content types. 
+	- After validating the incoming data it also handles deserialization, allowing parsed data to be converted back into complex types.
 
-	- After validating the incoming data, serializers also enable deserialization, which allows parsed data to be transformed back into complex types.
 
 >> What is validation in Django REST Framework?
 
@@ -24,7 +36,6 @@
 >> What’s the difference between a View, Viewset  & ModelViewSet 
 
 	VIEW >> is a single function that performs a specific action on a model.
-
 	VIEWSET >> combines the logic for different kinds of views into a single class.
 				(is a class that provides a set of actions that can be performed on a model.)
 
@@ -32,7 +43,6 @@
 
 		- they handle multiple HTTP methods(get,put,post,delete) through action routing which maps HTTP methods to actions performed on data.
 	
-
 	MODEL VIEWSET >> is a special type of ViewSet that is automatically generated from a model.
 
 		- This means that it will already have all of the CRUD operations (create, read, update, delete) set up and ready to go.

@@ -1,0 +1,25 @@
+
+>> Cross-Origin Resource Sharing (CORS):
+
+    It is a protocol that enables scripts running on a browser client to interact with resources from a different origin. 
+    
+        - This is useful because, the same-origin policy followed by XMLHttpRequest and fetch, 
+        JavaScript can only make calls to URLs that live on the same origin as the location where the script is running.
+
+
+>> What's an access token?
+    When a user logins in, 
+        >> the authorization server issues an access token, 
+            >> client applications use this access token to make secure calls to an API server.
+                >> When a client application needs to access protected resources on a server on behalf of a user
+                    >> the access token lets the client signal to the server that it has received authorization by the user to perform certain tasks/access certain resources.
+
+
+>> What is a refresh token?
+    For security purposes, access tokens may be valid for a short amount of time. Once they expire, client applications can use a refresh token to "refresh" the access token. That is, a refresh token is a credential artifact that lets a client application get new access tokens without having to ask the user to log in again.
+
+    The client application can get a new access token as long as the refresh token is valid and unexpired. Consequently, a refresh token that has a very long lifespan could theoretically give infinite power to the token bearer to get a new access token to access protected resources anytime. The bearer of the refresh token could be a legitimate user or a malicious user.
+
+
+>> What is meant by a bearer token?
+    A bearer token stands for a token that can be used by those who hold it. The access token thus acts as a credential artifact to access protected resources rather than an identification artifact.

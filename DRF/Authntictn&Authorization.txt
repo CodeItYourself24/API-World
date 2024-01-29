@@ -1,3 +1,15 @@
+<<<<<<<<<<<<<<<< Authentication & Authorization >>>>>>>>>>>>>>>>>>>>>
+
+Authentication >>
+                it is about granting access to the webapp who has the correct credentials.
+
+Authorization >>
+                Authorization gives permission to the users to access a resource. 
+        
+        Note: In secure environments, authorization must always follow authentication. 
+
+
+
 
 <<<<<<<<<<<< TYPES OF AUTHENTICATIONS IN drf >>>>>>>>>>>>>>>>>>>>>
 
@@ -6,8 +18,35 @@
     - session authentication
     - remote user authentication
 
-Basic authentication >>
 
-        - users HTTP basic authentication
-        - Generally good for testing
+Session authentication >>
+
+    Client enters creds >> receives session id from server (which is stored as cookie) >> then it passes in headers of every future http request.
         
+        >> the client authenticates with their credentials (username/password) and 
+            >> then receives a session ID from the server which is stored as a cookie. 
+                >> This session ID is then passed in the header of every future HTTP request.
+
+        - When the session ID is passed, the server uses it to look up a session object containing all available information for a given user, including credentials
+
+        - Once a user logs out of an application, the session ID is destroyed by both the client and server.
+        - If the user later logs in again, a new session ID is generated and stored as a cookie on the client
+
+        This approach is stateful because a record must be kept and maintained on both the server (the session object) and the client (the session ID).
+
+
+What is Token Authentication >>
+    
+    Tokens are pieces of data that carry enough information to facilitate the process of determining a user's identity or authorizing a user to perform an action. 
+
+                        (OR)
+    
+    tokens are artifacts that allow application systems to perform the authorization and authentication process.
+
+    Token-based authentication is stateless: 
+
+        >> once client sends the user creds to server
+            >> unique token is generated and stored as cookie/in local storage
+                >> token is then passed in headers of each incoming request
+                    >> server uses it to verify if that user is authenticated
+                    (server just checks whether token is valid or not and does not keep a record of the user)
